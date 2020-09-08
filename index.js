@@ -45,24 +45,25 @@ if (process.argv[2] === 'ask') {
   console.log(chalk.hex(`${colorInput}`).bold(`${hashDesign}`));
 }
 
-/*if (process.argv[2] === 'ask') {
-  prompt('Which hue and/or shade would you like to pick?');
-} else {
-  console.log(chalk.hex(`${colorInput}`).bold(`${hashDesign}`));
-}*/
+/*const UserInput = process.argv[2];
 
-/* if (process.argv[2] === 'ask') {
-  console.log('Which color would you like to choose?');
-} else {}
-*/
+function convertToArray(answer) {
+  let newArray = [];
+  for (let i = 0; i < answer.length; i++) {
+    newArray[i].append(UserInput[i]);
+  }
+  return newArray;
+}
 
-/*
+console.log(convertToArray(UserInput));
+
+console.log(arr);
 //creates a 2D array of #'s and prints hex value in middle array
 function hashGenerator(dimensions) {
   const width = dimensions.splice(0, 1);
   const height = dimensions.splice(3, 4);
-  console.log(width)
-  console.log(height)
+  console.log(width);
+  console.log(height);
   let arr = [];
   for (let i = 0; i < height; i++) {
     arr[i] = [];
