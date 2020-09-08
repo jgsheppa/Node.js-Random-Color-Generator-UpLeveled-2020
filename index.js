@@ -1,15 +1,25 @@
-//console.log(process.argv);
+const randomColor = require('randomcolor');
+const chooseColor = {
+  hue: process.argv[3],
+  luminosity: process.argv[2],
+};
+const colorInput = randomColor(chooseColor);
 
 function hashGenerator(width, height) {
-  const hash = '#';
   let arr = [];
-  for (let i = 0; i < width; i++) {
+  for (let i = 0; i < height; i++) {
     arr[i] = [];
-    for (let j = 0; j < height; j++) {
-      arr[i][j] = '#';
+    for (let j = 0; j < width; j++) {
+      if (i < height / 2 || i > height / 2) {
+        arr[i][j] = '#';
+      } else if (i === height / 2) {
+        arr[i][j] = colorInput;
+      }
     }
   }
-  return arr.join().slice(',');
+  arr.join(' ');
+  return arr;
 }
 
-console.log(hashGenerator(31, 10));
+//console.log(color);
+console.log('%c#', `color: ${colorInput}`);
