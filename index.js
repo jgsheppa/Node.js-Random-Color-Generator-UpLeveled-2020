@@ -21,13 +21,12 @@ const hashDesign = `
 
 const readline = require('readline');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
 //
 if (process.argv[2] === 'ask') {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
   rl.question('Which hue would you like? ', function (answer1) {
     rl.question('Which luminationn would you like? ', function (answer2) {
       const colorInputAskFor = randomColor({
