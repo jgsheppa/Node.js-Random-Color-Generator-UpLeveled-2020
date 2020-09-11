@@ -7,7 +7,6 @@ const chooseColor = {
   luminosity: process.argv[3],
 };
 const colorInput = randomColor(chooseColor);
-
 const hashDesign = `
 ###############################
 ###############################
@@ -21,14 +20,13 @@ const hashDesign = `
 
 const readline = require('readline');
 
-//
 if (process.argv[2] === 'ask') {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
   rl.question('Which hue would you like? ', function (answer1) {
-    rl.question('Which luminationn would you like? ', function (answer2) {
+    rl.question('Which luminosity would you like? ', function (answer2) {
       const colorInputAskFor = randomColor({
         hue: answer1,
         luminosity: answer2,
