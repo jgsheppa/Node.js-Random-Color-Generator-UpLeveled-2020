@@ -27,13 +27,16 @@ if (process.argv[2] === 'ask') {
   });
   rl.question('Which hue would you like? ', function (answer1) {
     rl.question('Which luminosity would you like? ', function (answer2) {
-      const colorInputAskFor = randomColor({
-        hue: answer1,
-        luminosity: answer2,
-      });
       console.log(
         'Thank you for your valuable feedback:',
-        chalk.hex(`${colorInputAskFor}`).bold(`${hashDesign}`),
+        chalk
+          .hex(
+            `${randomColor({
+              hue: answer1,
+              luminosity: answer2,
+            })}`,
+          )
+          .bold(`${hashDesign}`),
       );
       rl.close();
     });
