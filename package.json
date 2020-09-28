@@ -5,9 +5,7 @@
   "repository": "https://github.com/jgsheppa/node-random-color-generator-upleveled-2020.git",
   "author": "James Sheppard",
   "license": "MIT",
-  "devDependencies": {
-    "create-flex-plugin": "^3.13.6"
-  },
+  "devDependencies": {},
   "dependencies": {
     "chalk": "^4.1.0",
     "randomcolor": "^0.6.2"
